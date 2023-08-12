@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manhwas par Genre</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+</head>
+<body>
+
+<header>
+  <div id="menu-burger" onclick="toggleMenu()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>
+  <a href="index.html"><img class="logo" src="seven-logo.png" alt="Logo seven"></a>
+  <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Rechercher un titre...">
+  </div>
+  <div class="result-container" id="searchResults"></div>
+  <nav id="menu">
+      <ul>
+          <li class="menu-on">Accueil</li>
+          <li><a href="catalogue.html">Catalogue</a></li>
+          <li><a href="reseaux.html">Réseaux</a></li>
+      </ul>
+  </nav>
+  <a href="#" class="bouton-retour-haut">
+      <i class="gg-arrow-up"></i>
+  </a>
+</header>
+<div class="slide-container">
+  <div class="slide active">
+      <div class="slide-content">
+          <img class="slide-img"
+              src="https://i.pinimg.com/564x/52/83/be/5283be097917d1cbe00f9de419edc4d1.jpg"
+              alt="the beginning after the end">
+      </div>
+      <a href="tbate"><h1 class="h1-tbate">THE BEGINNING AFTER THE END</h1></a>
+  </div>
+  <div class="slide">
+      <a href="lookism"><h1>LOOKISM</h1></a>
+      <img class="slide-img"
+          src="https://i.pinimg.com/564x/41/62/a9/4162a90657334e3e93a0b92d0d858fe9.jpg" alt="LOOKISM">
+  </div>
+  <div class="slide">
+      <a href="solo-leveling.html"><h1>SOLO LEVELING</h1></a>
+      <img class="slide-img"
+          src="https://i.pinimg.com/564x/97/4f/d8/974fd8d33f729a217891032b95222595.jpg" alt="SOLO LEVELING">
+  </div>
+  <button class="precedent precedent-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="suivant suivant-right" onclick="plusDivs(1)">&#10095;</button>
+  <div class="pagination">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</div>
+<div id="genreContainer" class="flex-container"></div>
+</div>
+<script src="script.js"></script>
+<script src="manhwa-acceuil.js"></script>
+<script>
+    let slideIndex = 1;
+    let slideTimeout;
+
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        clearTimeout(slideTimeout);
+        showDivs(slideIndex + n, n);
+    }
+
+    function showDivs(n, direction) {
+        const x = document.getElementsByClassName("slide");
+
+        if (n > x.length) {
+            slideIndex = 1;
+        } else if (n < 1) {
+            slideIndex = x.length;
+        } else {
+            slideIndex = n;
+        }
+
+        for (let i = 0; i < x.length; i++) {
+            x[i].classList.remove("active");
+            x[i].classList.remove("slide-animation-plus");
+            x[i].classList.remove("slide-animation-minus"); // Remove previous animation class
+        }
+
+        if (direction === 1) {
+            x[slideIndex - 1].classList.add("slide-animation-plus"); // Add animation class for 'next' direction
+        } else if (direction === -1) {
+            x[slideIndex - 1].classList.add("slide-animation-minus"); // Add animation class for 'previous' direction
+        }
+
+        x[slideIndex - 1].classList.add("active");
+
+        const dots = document.getElementsByClassName("dot");
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+        dots[slideIndex - 1].classList.add("active");
+
+        slideTimeout = setTimeout(function () {
+            plusDivs(1);
+        }, 5000);
+    }
+
+    function currentSlide(n) {
+        clearTimeout(slideTimeout);
+        showDivs(n, n > slideIndex ? 1 : -1);
+    }
+
+    function autoSlide() {
+        plusDivs(1);
+        slideTimeout = setTimeout(autoSlide, 5000);
+    }
+
+    autoSlide();
+</script>
+
+</body>
+</html>

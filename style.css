@@ -1,0 +1,1113 @@
+body {
+    background-color: rgb(17, 24, 39);
+    margin: 0;
+    padding: 0;
+    font-family: Lato, sans-serif;
+}
+a {
+    text-decoration: none;
+   }
+::-webkit-scrollbar-thumb {
+    background-color: rgb(85, 96, 117);
+    border-radius: 4px; 
+}
+::-webkit-scrollbar-track {
+    background-color:  rgb(17, 24, 39);
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb-horizontal {
+    background-color: rgb(85, 96, 117);
+    border-radius: 4px; 
+}
+::-webkit-scrollbar-track-horizontal {
+    background: #555;
+}
+::-webkit-scrollbar-horizontal {
+    height: 6px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #000;
+    border-bottom: solid 1px grey;
+    height: 70px;
+    font-family: Lato, sans-serif;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-left: 6em;
+}
+.result { 
+    background-color: rgb(27, 34, 49);
+    width: 85%;
+    max-width: 600px;
+    height: 90px;
+    border-radius: 15px;
+    align-items: center;
+    padding: 10px;
+    transition: all 0.3s;
+    opacity: 0;
+    margin-top: 10px;
+    margin-left:1em;
+}
+.result-container { 
+    position: fixed;
+    top:5em;
+    right:10em;
+    align-items: center;
+    justify-content: center;
+    width:35%;
+    max-width: 410px;
+    height: auto;
+    max-height: 350px;
+    border-radius: 15px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 1;
+    background-color: rgb(34, 43, 65);
+}
+.details-search h2 {
+    position: relative;
+    top:-95px;
+    left:3.35em;
+    width:80%;
+     font-size: 1.3em;
+     color: white;
+    flex-wrap: wrap;
+ }
+ 
+ .details-search p {
+    width:80%;
+     position: relative;
+     top:-110px;
+     left:4em;
+     font-size: 1.1em;
+     color: #ccc;
+     margin:0;
+ }
+.result-container::-webkit-scrollbar {
+    width: 5px; 
+}
+
+.result-container::-webkit-scrollbar-thumb {
+    background-color: rgb(85, 96, 117);
+    border-radius: 4px; 
+}
+.result-container::-webkit-scrollbar-track {
+    background-color: rgb(33, 41, 58);
+    border-radius: 4px;
+}
+
+.result img {
+    width: 3.5em;
+    height: 5em;
+    border-radius: 5px;
+    object-fit: cover;
+    position: relative;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+    max-width: 410px;
+    height: auto;
+    border-radius: 15px;   
+}
+.search-bar input[type="text"] {
+    position: absolute;
+    top: 1.5em;
+    right: 11em;
+    background-color: rgb(27, 34, 49);
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    width: 31%;
+    max-width: 400px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.search-bar input[type="text"]:focus {
+    outline: none;
+    background-color: rgb(33, 41, 58);
+}
+.search-bar input[type="text"]:focus {
+    outline: none;
+    background-color: rgb(33, 41, 58);
+}
+.result-tag h2 {
+    margin:0;
+    position: relative;
+    top:-40px;
+    left:3.1em;
+     font-size: 1.5em;
+     color: rgb(117, 99, 99);
+ }
+
+.search-bar {
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 35%;
+max-width: 410px;
+height: auto;
+border-radius: 15px;   
+}
+.search-bar input[type="text"] {
+position: absolute;
+top: 1.5em;
+right: 11em;
+background-color: rgb(27, 34, 49);
+color: white;
+font-size: 15px;
+padding: 10px;
+border: none;
+border-radius: 15px;
+width: 31%;
+max-width: 400px;
+cursor: pointer;
+transition: all 0.3s;
+}
+.search-bar input[type="text"]:focus {
+outline: none;
+background-color: rgb(33, 41, 58);
+}
+.error-message-search {
+    color:rgb(189, 184, 184);
+    text-align: center;
+}
+#menu-burger {
+    position: absolute;
+    top: 1.5em;
+    right: 7em;
+    display: inline-block;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+#menu-burger .bar1,
+#menu-burger .bar2,
+#menu-burger .bar3 {
+    width: 32px;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+#menu-burger:hover {
+    opacity: 0.75;
+}
+#menu-burger.clicked .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+#menu-burger.clicked .bar2 {
+    opacity: 0;
+}
+#menu-burger.clicked .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+.menu-on {
+    border-bottom: 3px solid #3498db;
+    font-family: Lato, sans-serif;
+    color:#3498db;
+    text-transform: uppercase;
+  }
+#menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(34, 38, 51);
+    width: 300px;
+    height: 100%;
+    border-radius: 0px 15px 15px 0px;
+    animation: slideDown 0.3s;
+    z-index: 2;
+    font-size: 30px;
+    color: white;
+}
+#menu.visible {
+    display: block;
+}
+#menu ul {
+    font-size: 20px;
+    position: absolute;
+    top: 30%;
+    left: 75px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+#menu ul li {
+    padding: 8px 0;
+}
+#menu ul li a {
+    position: relative;
+    display: block;
+    padding: 4px 0;
+    font-family: Lato, sans-serif;
+    color: #ecf0f1;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+#menu ul li a::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3498db;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+#menu ul li a:hover {
+    color: #95a5a6;
+}
+#menu ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+#menu li {
+    margin-top: 30px;
+}
+#menu a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+#menu a:hover {
+    color: rgb(2, 132, 199);
+}
+#menu {
+    animation-duration: 0.5s;
+}
+
+#menu.visible {
+    animation-name: slideInMenu;
+}
+
+#menu.hidden {
+    animation-name: slideOutMenu;
+    animation-duration: 0.5s;
+}
+@keyframes slideInMenu {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideOutMenu {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+} .slide-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    max-height: 600px;
+    overflow: hidden;
+}
+.slide {
+    position: absolute;
+    width: 75%;
+    max-width: 1000px;
+    height: 40vh;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease;
+    box-shadow: 0px 0px 15px 5px rgb(99, 118, 158);
+    border-radius: 25px;
+}
+.slide-animation-plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: slideAnimationSuivant 2s;
+}
+
+@keyframes slideAnimationSuivant {
+    0% {
+        left: -70%;
+        opacity:0;
+    }
+    50% {
+        left: 2%;
+        opacity:1;
+    }
+    75% {
+        left: 0%;
+    }
+    100% {
+        align-items: center;
+    }
+}
+.slide-animation-minus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: slideAnimationPrecedent 2s;
+}
+
+@keyframes slideAnimationPrecedent {
+    0% {
+        right: -70%;
+        opacity:0;
+    }
+    50% {
+        right: 2%;
+        opacity:1;
+    }
+    75% {
+        right: 0%;
+    }
+    100% {
+        align-items: center;
+    }
+}
+.slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.slide h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    opacity: 0.9;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    transition: all 0.5s;
+}
+.slide h1::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #3498db;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.slide:hover h1 {
+    color: #95a5a6;
+}
+.slide:hover h1::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.slide-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+.dot {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.dot.active {
+    background-color: #ffffff;
+}
+.precedent,
+.suivant {
+  background-color: #3498db;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+.precedent:hover {
+    opacity: 1;
+}
+.suivant:hover {
+    opacity: 1;
+}
+.suivant {
+    position: absolute;
+    right: 20%;
+}
+.precedent {
+    position: absolute;
+    left: 20%;
+}
+.h1-catalogue {
+    position:relative;
+    top:1em;
+    font-family: Lato, sans-serif;
+    color:white;
+    letter-spacing: 5px;
+    text-align:center;
+    font-size: 40px;
+}
+.p-catalogue {
+    position:relative;
+    top:1.6em;
+    color: rgb(182, 175, 175);
+    text-align: center;
+    font-size: 20px;
+    width: auto;
+    height: 1px;
+}
+
+.form-tags {
+    position: relative;
+    top: 5em;
+    text-align: center;
+    margin: 20px auto;
+    background-color: rgb(27, 34, 49);
+    width: 75%;
+    max-width:1000px;
+    height: auto;
+    padding: 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.tag-link, .clear-tag {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #3498db;
+    opacity: 0.8;
+    color: #fff;
+    cursor: pointer;
+    width: auto;
+    text-decoration: none;
+    margin: 5px;
+}
+
+.tag-link {
+    transition: all 0.3s;
+}
+
+.tag-link.active {
+    opacity: 1;
+    animation: tagLinkHover 0.3s;
+}
+@keyframes tagLinkHover {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.clear-tag {
+    background-color: #ec1818;
+    opacity: 0.9;
+}
+.tag-link.active {
+    opacity: 1;
+    background-color: #66b2e6;
+}
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    top:5em;
+}
+
+.manhwa {
+    border:solid 1px rgb(27, 34, 49);
+    width: 160px;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    margin: 10px;
+    margin-bottom:20px;
+    background-color: rgb(33, 41, 58);
+    color:rgb(177, 172, 172);
+}
+.manhwa:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    animation: manhwaHover 0.5s ease-in-out;
+    color:rgb(228, 222, 222);
+}
+.manhwa h3 {
+    position: relative;
+    top:-10px;
+    margin-bottom: -10px;
+}
+.manhwa img {
+    width: 100%;
+    height: 190px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+}
+.manhwa .details {
+    padding: 5px;
+    background-color: rgb(33, 41, 58);
+    border-radius: 0 0 10px 10px;
+}
+.manhwa .name {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+.manhwa .genre,
+.manhwa .author,
+.manhwa .statut {
+    font-size: 12px;
+    color: #999;
+    margin:5px;
+}
+#error-message {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+    position: relative;
+    top:10em;
+}
+.hidden {
+    display: none;
+}
+.genre-div {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .genre-title {
+    width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+   }
+  .content-manhwa-info-chap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom:200px;
+}
+.content-manhwa-info-chap h1 {
+    font-size: 50px;
+    color:white;
+    margin-bottom: 0;
+}
+.content-manhwa-info-chap h2 {
+    font-size: 25px;
+    color:grey;
+    margin-top: 0;
+}
+.chapitre-menu-container {
+  position: relative;
+  display: inline-block;
+}
+
+.chapitre-menu-toggle {
+  display: none;
+}
+
+.chapitre-menu-button {
+  padding: 15px;
+  background-color: #1f1e1e; /* Noir */
+  color:#3498db;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.chapitre-menu-button:hover {
+  background-color: #3d3c3c;
+}
+
+.chapitre-menu-button__icon {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-top: 20px;
+  margin-right: 6px;
+  border-top: 2px solid #3498db; 
+  border-right: 2px solid #3498db;
+  transform: rotate(-45deg);
+  transition: transform 0.3s;
+}
+
+.chapitre-menu-toggle:checked + .chapitre-menu-button .chapitre-menu-button__icon {
+  transform: rotate(135deg);
+}
+
+.chapitre-menu {
+  position: absolute;
+  top: 100%;
+  left: -10px;
+  width: 110px;
+  max-height: 300px;
+  margin-top: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 10px 20px;
+  text-align: center;
+  list-style: none;
+  background-color: #1f1e1e; /* Noir */
+  display: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.chapitre-menu-item {
+  padding: 10px 7px;
+  background-color: #1f1e1e; /* Noir */
+  cursor: pointer;
+  width: 100px;
+
+}
+
+.chapitre-menu-item a {
+  text-decoration: none;
+  color:#3498db;
+  font-size: 18px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.chapitre-menu-item a:hover {
+  color: #fff;
+}
+
+.chapitre-menu-toggle:checked ~ .chapitre-menu {
+  display: block;
+ }
+ .gg-arrow-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1.3));
+    width: 22px;
+    height: 22px
+   }
+   
+   .gg-arrow-right::after,
+   .gg-arrow-right::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 3px
+   }
+   
+   .gg-arrow-right::after {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    bottom: 7px
+   }
+   
+   .gg-arrow-right::before {
+    width: 16px;
+    height: 2px;
+    bottom: 10px;
+    background: currentColor
+   } 
+   .gg-arrow-left {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1.3));
+    width: 22px;
+    height: 22px
+   }
+   
+   .gg-arrow-left::after,
+   .gg-arrow-left::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    left: 3px
+   }
+   
+   .gg-arrow-left::after {
+    width: 8px;
+    height: 8px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    transform: rotate(45deg);
+    bottom: 7px
+   }
+   
+   .gg-arrow-left::before {
+    width: 16px;
+    height: 2px;
+    bottom: 10px;
+    background: currentColor
+   } 
+   .precedent-chapitre,
+   .prochain-chapitre {
+    padding: 10px 25px;
+    border-radius: 30px;
+    background-color:  rgb(33, 41, 58);
+    position: absolute;
+    top:15em;
+   }
+   .precedent-chapitre1,
+   .prochain-chapitre1 {
+    padding: 10px 25px;
+    border-radius: 30px;
+    background-color:  rgb(33, 41, 58);
+   }
+   .precedent-chapitre {
+    position: absolute;
+    left:10%;
+   }
+   .prochain-chapitre {
+    position: absolute;
+    right:10%;
+   }
+   .precedent-chapitre1 {
+    position: relative;
+    top: 8em;
+    right:560%;
+   }
+   .prochain-chapitre1 {
+    position: relative;
+    top: 5em;
+    left:560%;
+   }
+   .prochain-chapitre1 a,
+   .precedent-chapitre1 a,
+   .prochain-chapitre a,
+   .precedent-chapitre a {
+    color: rgb(190, 185, 185);
+   }
+   .prochain-chapitre1 :hover,
+   .precedent-chapitre1 :hover,
+   .prochain-chapitre :hover,
+   .precedent-chapitre :hover {
+    color:#3498db;
+   }
+   .footer-manhwa-page {
+    position: relative;
+    margin-bottom: 10%;
+   }
+   .img-manhwa-page {
+    position: relative;
+    top:5em;
+   }
+   .bouton-retour-haut {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(33, 41, 58);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.bouton-retour-haut:hover {
+    opacity: 0.7;
+}
+.gg-arrow-up {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px
+}
+
+.gg-arrow-up::after,
+.gg-arrow-up::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 4px
+}
+
+.gg-arrow-up::after {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: rotate(45deg);
+  left: 7px
+}
+
+.gg-arrow-up::before {
+  width: 2px;
+  height: 16px;
+  left: 10px;
+  background: currentColor
+}
+.container-manhwa-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+    /* En-tête */
+    .manhwa-h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .manhwa-h1 h1 {
+      font-size: 36px;
+      color: #ffffff;
+    }
+      /* Contenu principal */
+      .content-manhwa {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: 20px;
+        background-color: rgb(33, 41, 58);
+      }
+    /* Contenu principal */
+    .content {
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .cover-image {
+      flex: 1;
+      border-radius: 10px;
+      object-fit: cover;
+      margin: 2%;
+    }
+    
+    .details {
+      flex: 2;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+    .details h2 {
+      font-size: 28px;
+      color: white;
+      margin-bottom: -5px;
+    }
+    .synopsis {
+      text-align: justify;
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+    
+    .meta-info {
+      color: #ccc;
+    }
+    
+    .meta-info h3 {
+      font-size: 20px;
+      color: white;
+      margin-bottom: -5px;
+      margin-top: 0px;
+    }
+    
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      color: #ccc;
+      position: relative;
+      right:40px;
+    }
+    
+    .genres il {
+      font-size: 16px;
+      margin-bottom: 5px;
+      margin-right:7px;
+    }
+    #invertButton {
+      font-size: 20px;
+      margin: 2%;
+      width:auto;
+      height:0px;
+      color:#3498db;
+      padding:25px 20px;
+      background-color: rgb(33, 41, 58);
+      border-radius:20px;
+      border: 1px solid rgb(224, 217, 217);
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    #invertButton:hover {
+      background: rgb(57, 65, 82);
+    }
+    .content-chapitre-liste {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    /* Liste des chapitres */
+    .chapter-list {
+      display: flex;
+      justify-content: center;
+      align-items: center; /* Centre les éléments verticalement */
+      width: 80%;
+      flex-wrap: wrap;
+      padding: 10px;
+      background: rgb(31, 37, 49);
+      height: 30em;
+      overflow-y: auto; 
+      overflow-x: hidden;
+      border-radius: 30px;
+    }
+    
+    .chapter-item {
+      background-color: rgb(33, 41, 58);
+      width: 40%;
+      padding: 15px;
+      border-radius: 5px;
+      margin: 10px;
+      color: rgb(255, 255, 255);
+      border: solid 1px rgb(141, 122, 122);
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    
+    .chapter-item a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    
+    .chapter-item:hover {
+      background-color: rgb(54, 60, 73);
+    }
+    .content-manhwa-similaire {
+        display: flex;
+        width: auto;
+        height:auto;
+        background-color: rgb(33, 41, 58);
+        border-radius: 20px;
+        padding:20px 5px;
+        margin-top: 3%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:5%;
+      }
+      .manhwa-similaire {
+        display: flex;
+        flex-direction: column;
+        width: 17%;
+        height: auto;
+        margin-right: 15px;
+        transition: 0.3s all;
+        margin-bottom: -30px;
+      }
+      .manhwa-similaire:hover {
+        filter: brightness(70%);
+      }
+      .manhwa-similaire img {
+        border-radius: 10px;
+        height:200px;
+      }
+    .content-manhwa-similaire a {
+        color:#ffffff;
+    }
+    .genre-div {
+        display: flex;
+        flex-wrap:nowrap;
+        width:85%;
+        max-width: 75em;
+        max-height:470px;
+        background-color:rgb(51, 56, 73);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow-x: scroll;
+        overflow-y: hidden;
+        margin: 20px auto 7%; 
+      }
+      .genre-title {
+        font-size: 2em;
+        font-weight: bold;
+        color: white;
+        letter-spacing: 2px;
+        font-family: Lato, sans-serif;
+        position: relative;
+        text-align: center;
+      }
+      video {
+        position: relative;
+        top:5em;
+        width: 80%; 
+        height: auto; 
+        display: block;
+      }

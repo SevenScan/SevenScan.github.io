@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catalogue | SevenScan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="seven-logo.png">
+</head>
+<body>
+<header>
+    <div id="menu-burger" onclick="toggleMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+    <a href="index.html"><img class="logo" src="seven-logo.png" alt="Logo seven"></a>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher un titre...">
+    </div>
+    <div class="result-container" id="searchResults"></div>
+    <nav id="menu">
+        <ul>
+            <li><a href="index.html">Acceuil</a></li>
+            <li class="menu-on">Catalogue</li>
+            <li><a href="resaux.html">Résaux</a></li>
+        </ul>
+    </nav>
+    <a href="#" class="bouton-retour-haut">
+        <i class="gg-arrow-up"></i>
+    </a>
+</header>
+
+<h1 class="h1-catalogue">CATALOGUE</h1>
+<p class="p-catalogue">Selectionnez le ou les tags que vous desirez pour faire apparaitre les manhwas avec ces tags.</p>
+
+<div class="form-tags" id="searchForm">
+    <a href="#" class="tag-link" data-tag="manhwa">Manhwas</a>
+    <a href="#" class="tag-link" data-tag="manga">Mangas</a>
+    <a href="#" class="tag-link" data-tag="anime">Anime</a>
+</div>
+
+<div class="form-tags" id="searchForm">
+    <a href="#" class="tag-link" data-tag="Nouveau">Nouveau</a>
+    <a href="#" class="tag-link" data-tag="art-martial">Populaire</a>
+    <a href="#" class="tag-link" data-tag="comedie">Recommandé</a>
+</div>
+
+<form class="form-tags" id="filterForm">
+    <a href="#" class="tag-link" data-tag="action">Action</a>
+    <a href="#" class="tag-link" data-tag="art-martial">Art martial</a>
+    <a href="#" class="tag-link" data-tag="comedie">Comédie</a>
+            <a href="#" class="tag-link" data-tag="drame">Drame</a>
+            <a href="#" class="tag-link" data-tag="ecole">Ecole</a>
+            <a href="#" class="tag-link" data-tag="fantastique">Fantastique</a>
+            <a href="#" class="tag-link" data-tag="gangs">Gangs</a>     
+            <a href="#" class="tag-link" data-tag="horreur">Horreur</a>
+            <a href="#" class="tag-link" data-tag="isekai">Isekai</a>
+            <a href="#" class="tag-link" data-tag="magie">Magie</a>
+            <a href="#" class="tag-link" data-tag="mecha">Mecha</a>
+            <a href="#" class="tag-link" data-tag="romance">Romance</a>
+            <a href="#" class="tag-link" data-tag="reincarnation">Regression</a>
+            <a href="#" class="tag-link" data-tag="reincarnation">Reincarnation</a>
+            <a href="#" class="tag-link" data-tag="sf">Science fiction</a>
+            <a href="#" class="tag-link" data-tag="sport">Sport</a>
+            <a href="#" class="tag-link" data-tag="surnaturel">Surnaturel</a>
+            <button class="clear-tag" id="clearTagsButton">Effacer les tags</button>
+        </form>
+        
+        <div id="results"></div>
+        <p id="error-message" class="hidden">Aucun manhwa ne correspond aux tags sélectionnés.</p>
+        
+  
+        <script type="text/javascript" src="script.js"></script>
+        <script src="remonter.js"></script>
+ 
