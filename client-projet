@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Single Page Website</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#theme1">Thème 1</a></li>
+        <li><a href="#theme2">Thème 2</a></li>
+        <li><a href="#theme3">Thème 3</a></li>
+        <li><a href="#theme4">Thème 4</a></li>
+        <li><a href="#theme5">Thème 5</a></li>
+      </ul>
+    </nav>
+  </header>
+  <a href="#" class="bouton-retour-haut">
+    <i class="gg-arrow-up"></i>
+</a>
+  <section id="theme1">
+    <h2>Thème 1 - Nature</h2>
+    <p>Découvrez la beauté de la nature avec des images apaisantes et des informations sur la faune et la flore.</p>
+  </section>
+
+  <section id="theme2">
+    <h2>Thème 2 - Technologie</h2>
+    <p>Explorez les dernières avancées technologiques et les gadgets futuristes qui façonnent notre monde moderne.</p>
+  </section>
+
+  <section id="theme3">
+    <h2>Thème 3 - Art</h2>
+    <p>Immergez-vous dans le monde de l'art avec des œuvres inspirantes et des analyses de divers mouvements artistiques.</p>
+  </section>
+
+  <section id="theme4">
+    <h2>Thème 4 - Voyage</h2>
+    <p>Voyagez à travers les destinations les plus exotiques et découvrez les cultures et les merveilles du monde.</p>
+  </section>
+
+  <section id="theme5">
+    <h2>Thème 5 - Cuisine</h2>
+    <p>Dégustez des plats délicieux du monde entier et apprenez des recettes pour devenir un chef chez vous.</p>
+  </section>
+
+  <script src="scroll.js"></script>
+</body>
+</html>
+
+
+<style>
+/* Réinitialisation des marges et des rembourrages */
+body, h1, h2, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ffa500;
+}
+
+/* Styles des sections */
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333; /* Couleur du titre */
+}
+
+section p {
+  font-size: 1.2rem;
+  color: #555; /* Couleur du texte */
+}
+
+/* Scroll-to-top bouton */
+#scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#scroll-to-top:hover {
+  opacity: 0.8;
+}
+#theme1 {
+  background-color: #f4f4f4; /* Gris clair */
+}
+
+#theme2 {
+  background-color: #3498db; /* Bleu */
+}
+
+#theme3 {
+  background-color: #e74c3c; /* Rouge */
+}
+
+#theme4 {
+  background-color: #2ecc71; /* Vert */
+}
+
+#theme5 {
+  background-color: #f39c12; /* Jaune */
+}
+   .bouton-retour-haut {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(33, 41, 58);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: opacity 0.3s;
+    z-index: 2;
+}
+
+.bouton-retour-haut:hover {
+    opacity: 0.7;
+}
+.gg-arrow-up {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 22px;
+  height: 22px
+}
+
+.gg-arrow-up::after,
+.gg-arrow-up::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 4px
+}
+
+.gg-arrow-up::after {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+  transform: rotate(45deg);
+  left: 7px
+}
+
+.gg-arrow-up::before {
+  width: 2px;
+  height: 16px;
+  left: 10px;
+  background: currentColor
+}
+</style>
+
+<script>
+  const retourHautButton = document.querySelector(".bouton-retour-haut");
+
+  retourHautButton.addEventListener("click", () => {
+    smoothScrollToTop();
+  });
+  
+  function smoothScrollToTop() {
+    const startPosition = window.pageYOffset;
+    const startTime = performance.now();
+  
+    function scrollStep(timestamp) {
+      const currentTime = timestamp || performance.now();
+      const timeElapsed = currentTime - startTime;
+      const scrollTo = Math.easeInOutQuad(
+        timeElapsed,
+        startPosition,
+        -startPosition,
+        1000
+      );
+      window.scrollTo(0, scrollTo);
+  
+      if (timeElapsed < 1000) {
+        requestAnimationFrame(scrollStep);
+      }
+    }
+  
+    Math.easeInOutQuad = function (t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
+  
+    requestAnimationFrame(scrollStep);
+  }
+  
+
+    // Code JavaScript pour gérer le défilement fluide vers les sections de thème
+document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: "smooth"
+      });
+    });
+  });
+});
+
+</script>
